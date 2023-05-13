@@ -1,0 +1,11 @@
+__pycache_
+.vscode
+img.jpg
+README.md
+.pytest_cache
+*.pyc
+*.pyo
+*.pyd
+DockerFile
+package-lock.json
+package.json

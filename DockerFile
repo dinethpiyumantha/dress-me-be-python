@@ -1,0 +1,16 @@
+# Use a Python base image
+FROM python:3.9
+
+ENV PYTHONBUFFERED True
+
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
+
+# Install the Python dependencies
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
+
+
+# Expose the desired port
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
